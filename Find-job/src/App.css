@@ -1,42 +1,123 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+:root {
+  --Background: hsl(180, 52%, 96%);
+  --Filter-Tablets: hsl(180, 31%, 95%)
+  --Dark-Grayish: hsl(180, 8%, 52%);
 
+--Very-Dark: hsl(180, 14%, 20%);
+--Primary: hsl(180, 29%, 50%);
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+
+  background: var(--Background);
+}
+header {
+  width: 100vw;
+  height: 30vh;
+  background: url(./public/images/bg-header-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* .cover-header {
+  width: 100%;
+  height: 100%;
+
+} */
+.jobs {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: calc(2vw + 2rem);
+}
+.job-container {
+  width: 70vw;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  margin: 1.3rem 0;
+  box-shadow: 0px 4px 6px 4px rgb(91, 164, 164, 0.2);
+}
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  display: flex;
+  align-items: center;
+  padding-right: 1.5rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.part-1 {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.company {
+  font-weight: 700;
+  color: rgb(102, 209, 223);
+  margin-right: 0.8rem;
+}
+.cname {
+  font-weight: 700;
+  color: rgb(102, 209, 223);
+  margin-right: 0.8rem;
+}
+.new,
+.featured {
+  color: #fff;
+  background-color: rgb(102, 209, 223);
+  border-radius: 1rem;
+  padding: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+}
+.featured {
+  background: darkgray;
+}
+.position {
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: inline-block;
+  padding: 0.7rem 0;
+}
+.details {
+  color: darkgray;
+}
+.part-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.btn {
+  background: var(--Background);
+  color: var(--Dark-Grayish);
+  color: rgb(102, 209, 223);
+  border: none;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 4px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 504px) {
+  /* … */
+  header {
+    background: url(./public/images/bg-header-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  to {
-    transform: rotate(360deg);
+  .job-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 72vw;
+    padding-bottom: 1rem;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
