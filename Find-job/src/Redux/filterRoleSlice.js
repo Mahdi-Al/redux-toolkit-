@@ -1,7 +1,7 @@
-// src/features/filterSlice.js
+// Redux/filterRoleSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-const filterSlice = createSlice({
+const filterRoleSlice = createSlice({
   name: "filter",
   initialState: {
     keywords: [],
@@ -13,7 +13,9 @@ const filterSlice = createSlice({
       }
     },
     removeKeyword: (state, action) => {
-      state.keywords = state.keywords.filter((key) => key !== action.payload);
+      state.keywords = state.keywords.filter(
+        (keyword) => keyword !== action.payload
+      );
     },
     clearKeywords: (state) => {
       state.keywords = [];
@@ -21,5 +23,6 @@ const filterSlice = createSlice({
   },
 });
 
-export const { addKeyword, removeKeyword, clearKeywords } = filterSlice.actions;
-export default filterSlice.reducer;
+export const { addKeyword, removeKeyword, clearKeywords } =
+  filterRoleSlice.actions;
+export default filterRoleSlice.reducer;

@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import { addKeyword } from "../Redux/filterRoleSlice";
 
@@ -29,8 +28,7 @@ export default function Job(props) {
           src={logo}
           alt={`${company} logo`}
           onError={(e) => (e.target.src = "path/to/default/image.png")}
-        />{" "}
-        {/* Fallback image */}
+        />
       </div>
       <div className="part-1">
         <div className="company">
@@ -51,10 +49,9 @@ export default function Job(props) {
         {keyWords.map((keyword, index) => (
           <button
             className="btn"
-            onClick={() => dispatch(addKeyword())}
+            onClick={() => dispatch(addKeyword(keyword))} // Dispatch the keyword
             key={index}
           >
-            {" "}
             {keyword}
           </button>
         ))}
